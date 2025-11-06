@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smart Calculator</title>
+<meta name="description" content="Smart Calculator – Basic & Scientific online calculator with fractions and trig functions.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="calculator">
+  <span class="mode-switch" onclick="toggleMode()"> ⇄ <span id="modeText">Scientific Calculator</span> </span>
+  <input type="text" id="display" disabled />
+
+  <!-- BASIC CALCULATOR -->
+  <div id="basic" style="display: none;">
+    <div class="button-row">
+      <button class="btn-clear" onclick="clearDisplay()">C</button>
+      <button class="btn-op" onclick="append('÷')">÷</button>
+      <button class="btn-op" onclick="append('×')">×</button>
+      <button class="btn-func" onclick="del()">⌫</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('7')">7</button>
+      <button class="btn-gray" onclick="append('8')">8</button>
+      <button class="btn-gray" onclick="append('9')">9</button>
+      <button class="btn-op" onclick="append('−')">−</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('4')">4</button>
+      <button class="btn-gray" onclick="append('5')">5</button>
+      <button class="btn-gray" onclick="append('6')">6</button>
+      <button class="btn-op" onclick="append('+')">+</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('1')">1</button>
+      <button class="btn-gray" onclick="append('2')">2</button>
+      <button class="btn-gray" onclick="append('3')">3</button>
+      <button class="btn-equal" onclick="calculate()">=</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('0')">0</button>
+      <button class="btn-gray" onclick="append('.')">.</button>
+    </div>
+  </div>
+
+  <!-- SCIENTIFIC CALCULATOR -->
+  <div id="scientific">
+    <div class="button-row">
+      <button class="btn-clear" onclick="clearDisplay()">C</button>
+      <button class="btn-func" onclick="append('(')">(</button>
+      <button class="btn-func" onclick="append(')')">)</button>
+      <button class="btn-func" onclick="del()">⌫</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-yellow" onclick="toggleShift()" id="shiftBtn">SHIFT</button>
+      <button class="btn-func" onclick="append('Math.sqrt(')">√</button>
+      <button class="btn-func" onclick="append('^')">xʸ</button>
+      <button class="btn-op" onclick="append('÷')">÷</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-func trig" data-func="sin" onclick="appendTrig('sin')">sin</button>
+      <button class="btn-func trig" data-func="cos" onclick="appendTrig('cos')">cos</button>
+      <button class="btn-func trig" data-func="tan" onclick="appendTrig('tan')">tan</button>
+      <button class="btn-op" onclick="append('×')">×</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('7')">7</button>
+      <button class="btn-gray" onclick="append('8')">8</button>
+      <button class="btn-gray" onclick="append('9')">9</button>
+      <button class="btn-op" onclick="append('−')">−</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('4')">4</button>
+      <button class="btn-gray" onclick="append('5')">5</button>
+      <button class="btn-gray" onclick="append('6')">6</button>
+      <button class="btn-op" onclick="append('+')">+</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('1')">1</button>
+      <button class="btn-gray" onclick="append('2')">2</button>
+      <button class="btn-gray" onclick="append('3')">3</button>
+      <button class="btn-equal" onclick="calculate()">=</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-gray" onclick="append('0')">0</button>
+      <button class="btn-gray" onclick="append('.')">.</button>
+      <button class="btn-yellow" onclick="append('π')">π</button>
+      <button class="btn-yellow" onclick="append('e')">e</button>
+    </div>
+    <div class="button-row">
+      <button class="btn-func" onclick="appendFraction()">a/b</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
